@@ -13,7 +13,8 @@ def get_terms_for_table():
 
 
 def get_terms_for_table_from_db():  # TODO
-    pass
+    return [[t.id, t.term, t.explanation] for t in Term.objects.all()]
+
 
 
 def write_term_to_db(new_term, new_definition):

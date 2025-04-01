@@ -15,7 +15,8 @@ def index(request):
 
 
 def terms_list(request):
-    terms = terms_work.get_terms_for_table()
+    #terms = terms_work.get_terms_for_table()
+    terms = terms_work.get_terms_for_table_from_db()
     return render(request, "term_list.html", context={"terms": terms})
 
 
