@@ -51,4 +51,5 @@ def send_term(request):
 
 def show_stats(request):
     stats = terms_work.get_terms_stats()
-    return render(request, "stats.html", stats)
+    return render(request, "stats.html", context={"stats": stats,
+                                                  "user": request.user})
