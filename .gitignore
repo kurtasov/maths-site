@@ -130,3 +130,5 @@ dmypy.json
 
 # Mac OS X file manager
 .DS_Store
+
+.idea/

@@ -1,3 +1,6 @@
+from .models import Term
+
+
 def get_terms_for_table():
     terms = []
     with open("./data/terms.csv", "r", encoding="utf-8") as f:
@@ -7,6 +10,15 @@ def get_terms_for_table():
             terms.append([cnt, term, definition])
             cnt += 1
     return terms
+
+
+def get_terms_for_table_from_db():  # TODO
+    pass
+
+
+def write_term_to_db(new_term, new_definition):
+    term = Term(term=new_term, explanation=new_definition)
+    term.save()
 
 
 def write_term(new_term, new_definition):
