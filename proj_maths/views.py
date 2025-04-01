@@ -2,6 +2,13 @@ from django.shortcuts import render
 from django.core.cache import cache
 from . import terms_work
 
+def hello(request, name="Unknown User"):
+    name_flag = False
+    if request.method == 'GET' and 'myinput' in request.GET:
+        name = request.GET['myinput']
+        name_flag = True
+    return render(request, "hello.html", context={"name_to_greet": name,
+                                                  "name_flag": name_flag})
 
 def index(request):
     return render(request, "index.html")
