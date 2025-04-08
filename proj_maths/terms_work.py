@@ -6,13 +6,13 @@ def get_terms_for_table():
     with open("./data/terms.csv", "r", encoding="utf-8") as f:
         cnt = 1
         for line in f.readlines()[1:]:
-            term, definition, source = line.split(";")
+            term, definition, _ = line.split(";")
             terms.append([cnt, term, definition])
             cnt += 1
     return terms
 
 
-def get_terms_for_table_from_db():  # TODO
+def get_terms_for_table_from_db():
     return [[t.id, t.term, t.explanation] for t in Term.objects.all()]
 
 
